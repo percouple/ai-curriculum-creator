@@ -2,6 +2,10 @@
 import { ref } from 'vue'
 
 const input = ref("")
+
+const submitText = () => {
+    console.log(input.value)
+}
 </script>
 
 <template>
@@ -9,19 +13,24 @@ const input = ref("")
 
     <div class="card">
         <input type="text" v-model="input" class="input-box" />
-        <button type="button" @click="" class="submit-button">Generate</button>
+        <button type="submit" @click="submitText" class="submit-button">Generate</button>
     </div>
 </template>
 
 <style scoped>
 .card {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 .input-box{
-    width: 100%;
+    width: 80%;
+    height: 2rem;
 }
 .submit-button {
-    width: 100%;
+    width: 50%;
+    height: 3rem;
+    margin-top: 10px;
 }
 </style>
