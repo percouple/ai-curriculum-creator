@@ -1,11 +1,16 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
+import CheckboxGroup from './CheckboxGroup.vue'
+
 // Define an array of items for the checkboxes
 const items = ref([
     { id: 1, label: 'Videos', checked: false },
-    { id: 2, label: 'Written Materials', checked: false },
+    { id: 2, label: 'Written Resources', checked: false },
     { id: 3, label: 'Nearby Organizations', checked: false },
+    { id: 4, label: 'Nearby Experts', checked: false},
+    { id: 5, label: 'Starting Materials', checked: false},
+
 ])
 
 const levels = ref([
@@ -18,14 +23,8 @@ const levels = ref([
 
 <template>
     <div class="card">
-        <div v-for="item in items" :key="item.id" class="checkbox-group">
-            <input type="checkbox" :id="item.id" v-model="item.checked" />
-            <label>{{ item.label }}</label>
-        </div>
-        <div v-for="level in levels" :key="level.id" class="">
-            <input type="checkbox" :id="level.id" v-model="level.checked" />
-            <label>{{ level.label }}</label>
-        </div>
+        <CheckboxGroup :data="items" class="checkbox-group"/>
+        <CheckboxGroup :data="levels" class="checkbox-group" />
     </div>
 </template>
 
