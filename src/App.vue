@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Title from './components/Title.vue'
+import LearningInput from './components/LearningInput.vue';
 </script>
 
 <template>
@@ -12,6 +13,7 @@ import Title from './components/Title.vue'
     </a>
   </div>
   <Title msg="Click to Generate Learning Plan" />
+  <LearningInput />
 </template>
 
 <style scoped>
