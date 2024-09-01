@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import ReturnContentType from './ReturnContentType.vue';
 
 const input = ref("")
 
@@ -13,6 +14,7 @@ const submitText = () => {
 
     <div class="card">
         <input type="text" v-model="input" class="input-box" />
+        <ReturnContentType />
         <button type="submit" @click="submitText" class="submit-button">Generate</button>
     </div>
 </template>
